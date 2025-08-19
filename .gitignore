@@ -1,0 +1,11 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# Databases / uploads
+server/school_store.db
+server/uploads/
+
+# OS
+.DS_Store
