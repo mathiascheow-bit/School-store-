@@ -1,0 +1,12 @@
+services:
+- type: web
+  name: school-store-backend
+  env: python
+  rootDir: server
+  buildCommand: pip install -r requirements.txt
+  startCommand: gunicorn 'server.wsgi:application' --bind 0.0.0.0:$PORT --workers 2 --timeout 120
+  envVars:
+  - key: ADMIN_SEED_EMAIL
+    value: mathias_cheow@students.edu.sg
+  - key: PYTHON_VERSION
+    value: 3.11
