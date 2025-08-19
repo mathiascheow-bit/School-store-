@@ -1,1 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Admin - School Store</title>
+	<link rel="stylesheet" href="/web/assets/css/style.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+	<header class="topbar">
+		<div class="brand">
+			<div class="logo">SS</div>
+			<div class="name">School Store Admin</div>
+		</div>
+		<nav class="nav">
+			<a href="/web/index.html">Home</a>
+		</nav>
+	</header>
+
+	<main class="container">
+		<h1>Dashboard</h1>
+		<section class="summary" id="summary"></section>
+
+		<section class="charts">
+			<div class="chart">
+				<h3>Daily Orders (30d)</h3>
+				<canvas id="chartLine"></canvas>
+			</div>
+			<div class="chart">
+				<h3>Items Bought by Product</h3>
+				<canvas id="chartBar"></canvas>
+			</div>
+		</section>
+
+		<section class="products-admin">
+			<h2>Add Product</h2>
+			<form id="addProductForm" enctype="multipart/form-data">
+				<label>Name <input type="text" name="name" required></label>
+				<label>Price (cents) <input type="number" name="price_cents" min="1" required></label>
+				<label>Stock <input type="number" name="stock" min="0" value="0"></label>
+				<label>Description <textarea name="description"></textarea></label>
+				<label>Image <input type="file" name="image" accept="image/*"></label>
+				<button class="btn primary" type="submit">Create</button>
+			</form>
+			<div id="addProductResult" class="result"></div>
+		</section>
+
+		<section class="orders-admin">
+			<h2>Orders</h2>
+			<div id="orders"></div>
+		</section>
+
+		<section class="admin-users">
+			<h2>Add admin</h2>
+			<form id="grantAdminForm">
+				<label>Email <input type="email" name="email" required></label>
+				<button class="btn" type="submit">Grant</button>
+			</form>
+			<div id="grantResult" class="result"></div>
+		</section>
+	</main>
+
+	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+	<script src="/web/config.js"></script>
+	<script type="module" src="/web/assets/js/admin.js"></script>
+</body>
+</html>
 
